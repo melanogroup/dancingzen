@@ -1,0 +1,655 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dancing Zen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dancing Zen opens 5 January 2027. An intimate gathering space for up to 8 on Adelaide's western beaches, on Kaurna Yerta. Gatherings, rituals, circles. Give three hours, use the space for the whole day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap">
+<style>
+/* Layout: NAVA Vision web system applied to Dancing Zen. Black ground, matte gold for every line and label, purple for one band.
+   Banners: photo one side, fade to black (solid ~18%, clear by ~68%), text on the dark side, max ~42% wide. Mobile: photo on top, text below. */
+:root{
+  --black:#000000;
+  --white:#FFFFFF;
+  --gold:#BA9F68;           /* matte gold, Pantone 10118C */
+  --purple:#35173F;         /* brand purple, Pantone 7449C */
+  --purple-hover:#3F1B4A;
+  --subtle:#B59EB9;
+  --muted:rgba(255,255,255,.72);
+  --font-display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --font-text:'Montserrat',Helvetica,Arial,sans-serif;
+  --font-quote:'Playfair Display',Georgia,serif;
+  --fs-eyebrow:clamp(.85rem,1.2vw,1rem);
+  --fs-section:clamp(2.25rem,5vw,4rem);
+  --fs-title:clamp(1.5rem,2.2vw,2rem);
+  --fs-subline:clamp(1.2rem,1.7vw,1.5rem);
+  --fs-body:clamp(1.05rem,1.35vw,1.2rem);
+  --pad:clamp(1.25rem,5vw,5rem);
+  --gl:max(16px,env(safe-area-inset-left,0px));
+  --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--black);color:var(--white);font-family:var(--font-text);font-weight:300;font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;text-wrap:balance}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+.section{padding-block:clamp(4rem,9vw,7.5rem)}
+
+/* type */
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:var(--fs-eyebrow);line-height:1.2;color:var(--gold);margin-bottom:.85rem}
+.hero-h{font-family:var(--font-display);font-weight:600;text-transform:uppercase;font-size:clamp(3rem,6vw,5.6rem);line-height:.9}
+.h2{font-family:var(--font-display);font-weight:600;text-transform:uppercase;font-size:var(--fs-section);line-height:.94}
+.h3{font-family:var(--font-text);font-weight:500;font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.25}
+.gold{color:var(--gold)}
+.subline{font-weight:300;font-size:var(--fs-subline);line-height:1.45;margin-top:1.1rem;max-width:40ch}
+.subline-p{font-family:var(--font-quote);font-style:italic;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.35;max-width:28ch;margin-top:1.2rem}
+.body-copy{display:grid;gap:1.1rem;max-width:60ch;color:var(--muted)}
+
+/* buttons (NAVA Button Styles) */
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-family:var(--font-text);font-weight:400;text-transform:uppercase;letter-spacing:.08em;border:0;cursor:pointer;white-space:nowrap;font-size:1rem;padding:1rem 2.4rem;min-height:48px;text-decoration:none;transition:box-shadow .2s,background-color .2s,color .2s,transform .1s}
+.btn-lg{font-size:1.05rem;padding:1.2rem 2.9rem;min-height:56px}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,.link:focus-visible,.g-item:focus-visible,input:focus-visible{outline:2px solid var(--white);outline-offset:4px}
+.btn-gold{background:var(--gold);color:var(--black)}.btn-gold:hover{box-shadow:inset 0 0 0 2px var(--black)}
+.btn-purple{background:var(--purple);color:var(--white)}.btn-purple:hover{background:var(--purple-hover)}
+.btn-ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--white)}
+.link{font-weight:400;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;color:var(--gold);border-bottom:1px solid currentColor;padding-bottom:.2rem;text-decoration:none}
+.link:hover{border-bottom-width:2px}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:2.25rem}
+
+/* dividers (star divider, short) */
+.sd{display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.sd span{height:1px;background:var(--gold);width:clamp(48px,9vw,90px)}
+.sd svg{width:16px;height:16px;flex:none;display:block;margin:0 -1px}
+.d1{height:1px;background:var(--gold)}
+
+/* header */
+.site-head{position:absolute;inset:0 0 auto;z-index:10;padding-top:env(safe-area-inset-top,0px)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.4rem}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none}
+.brand img{width:58px;height:auto;display:block}
+.brand span{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:1.05rem}
+.menu{font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.88rem;text-decoration:none;display:flex;gap:1.6rem;align-items:center}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--gold)}
+
+/* banners (NAVA Hero Banners) */
+.banner{position:relative;min-height:clamp(560px,82vh,820px);overflow:hidden;background:var(--black);display:flex;align-items:center}
+.banner .photo{position:absolute;top:0;height:100%;width:68%;object-fit:cover;max-width:none}
+.banner.right .photo{right:0;object-position:78% center}
+.banner.left .photo{left:0;object-position:30% center}
+.banner .fade{position:absolute;inset:0;pointer-events:none}
+.banner.right .fade{left:auto;right:0;width:68%}
+.banner.left .fade{right:auto;left:0;width:68%}
+.banner.right .fade{background:linear-gradient(90deg,#000 0%,#000 18%,rgba(0,0,0,.9) 26%,rgba(0,0,0,.75) 33%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.35) 47%,rgba(0,0,0,.18) 54%,rgba(0,0,0,.07) 61%,rgba(0,0,0,0) 68%)}
+.banner.left .fade{background:linear-gradient(270deg,#000 0%,#000 18%,rgba(0,0,0,.9) 26%,rgba(0,0,0,.75) 33%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.35) 47%,rgba(0,0,0,.18) 54%,rgba(0,0,0,.07) 61%,rgba(0,0,0,0) 68%)}
+.banner .content{position:relative;z-index:2;width:100%;max-width:1240px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr);padding-block:7rem 4rem}
+.banner .inner{max-width:42%;text-shadow:0 1px 18px rgba(0,0,0,.45)}
+.banner.left .inner{margin-left:auto}
+.banner .btn{text-shadow:none}
+.rule{width:64px;height:2px;background:var(--gold);margin-top:2rem}
+
+/* launch strip */
+.launch{border-block:1px solid var(--gold)}
+.launch .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem 2.5rem;align-items:center;padding-block:1.6rem}
+.launch .date{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1}
+.launch .date small{display:block;font-size:.42em;letter-spacing:.24em;color:var(--gold);margin-bottom:.4rem}
+.launch .launch-copy{color:var(--muted);max-width:56ch}
+.count{display:flex;align-items:baseline;gap:.5rem;font-family:var(--font-display);font-weight:600;text-transform:uppercase}
+.count b{font-size:clamp(2.4rem,4vw,3.4rem);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.count span{letter-spacing:.14em;font-size:.9rem}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:3rem;border-top:1px solid var(--gold)}
+.facts div{padding:1.4rem 1.4rem 0 0;display:grid;gap:.25rem}
+.facts b{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.45rem;line-height:1.1}
+.facts small{font-size:.9rem;color:var(--muted)}
+
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.intro > *{min-width:0}
+
+/* gallery */
+.gallery-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.5rem}
+.gallery{columns:3 280px;column-gap:14px}
+.g-item{display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid;position:relative;overflow:hidden;border-radius:4px}
+.g-item img{display:block;width:100%;height:auto;transition:transform .6s ease,filter .6s ease}
+.g-item:hover img{transform:scale(1.03)}
+.g-item figcaption{position:absolute;left:0;right:0;bottom:0;letter-spacing:.1em;padding:2.2rem .9rem .8rem;background:linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0));font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;color:var(--white);text-align:left;opacity:0;transition:opacity .3s}
+.g-item:hover figcaption,.g-item:focus-visible figcaption{opacity:1}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem}
+.tab{font:inherit;font-weight:400;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--white);background:none;border:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);border-radius:999px;padding:.55rem 1.1rem;min-height:40px;cursor:pointer}
+.tab:hover{box-shadow:inset 0 0 0 1px var(--white)}
+.tab[aria-pressed="true"]{background:var(--gold);color:var(--black);box-shadow:none}
+.g-item.off{display:none}
+dialog.lightbox{border:0;padding:0;background:transparent;max-width:min(94vw,1400px);max-height:92vh;color:var(--white)}
+dialog.lightbox::backdrop{background:rgba(0,0,0,.92)}
+.lightbox img{display:block;max-width:100%;max-height:82vh;width:auto;height:auto;margin:0 auto}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.9rem}
+.lb-bar p{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem}
+.lb-btns{display:flex;gap:.5rem}
+.lb-btns button{font:inherit;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--white);border:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6);border-radius:999px;padding:.55rem 1.1rem;min-height:40px;cursor:pointer}
+.lb-btns button:hover{box-shadow:inset 0 0 0 2px var(--white)}
+
+
+/* ways to use */
+.uses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.5rem);margin-top:3rem}
+.use{margin:0;display:grid;gap:.9rem;align-content:start}
+.use .ph{overflow:hidden;border-radius:4px;aspect-ratio:4/5}
+.use img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.use:hover img{transform:scale(1.03)}
+.use h3{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.35rem,2vw,1.7rem);line-height:1}
+.use p{color:var(--muted);font-size:1rem;margin-top:.35rem}
+.illus{margin-top:1.5rem;font-size:.85rem;color:rgba(255,255,255,.55)}
+
+/* how it works */
+.how{background:var(--black)}
+.steps{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--gold)}
+.steps li{padding:2rem 2rem 0 0;display:grid;gap:.75rem;align-content:start}
+.steps li + li{padding-left:2rem;border-left:1px solid var(--gold)}
+.step-n{font-family:var(--font-display);font-weight:600;font-size:clamp(3rem,5vw,4.5rem);line-height:.85;color:var(--gold);font-variant-numeric:tabular-nums}
+.steps h3{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1}
+.steps p{color:var(--muted)}
+.how-cta{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--gold)}
+.how-cta p{font-family:var(--font-quote);font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);max-width:36ch}
+@media (max-width:860px){
+  .uses{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .steps li,.steps li + li{padding:1.75rem 0;border-left:0}
+  .steps li + li{border-top:1px solid var(--gold)}
+}
+
+/* plans: B1 card frames */
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:3rem}
+.card{border:1.5px solid var(--gold);border-radius:22px;padding:clamp(1.5rem,3vw,2.4rem);display:grid;gap:.75rem;align-content:start}
+.card .eyebrow{margin-bottom:0;color:var(--gold)}
+.card p{color:var(--muted)}
+.causes{list-style:none;margin:.25rem 0 0;padding:0;display:grid;gap:.55rem}
+.causes li{display:flex;gap:.75rem;align-items:baseline}
+.causes svg{width:11px;height:11px;flex:none;color:var(--gold);transform:translateY(1px)}
+
+/* quote banner */
+.quote blockquote{margin:0;font-family:var(--font-quote);font-weight:400;font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.18}
+.quote .cite{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.24em;font-size:.95rem;margin-top:1.4rem;color:var(--gold)}
+.quote .sig-note{color:var(--muted);margin-top:.4rem;font-size:.95rem}
+
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,6vw,6rem)}
+.story > *{min-width:0}
+
+/* acknowledgement band (purple) */
+.ack{background:var(--purple)}
+.ack .wrap{display:grid;justify-items:center;text-align:center;gap:1.25rem}
+.ack .eyebrow{margin:0}
+.ack blockquote{margin:0;font-family:var(--font-quote);font-style:italic;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.3;max-width:26ch}
+.ack p{color:rgba(255,255,255,.82);max-width:50ch}
+
+/* register */
+.register{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.register > *{min-width:0}
+form.interest{display:grid;gap:1rem}
+.field{display:grid;gap:.4rem}
+.field label{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--gold)}
+.field input,.field select{font:inherit;font-weight:400;font-size:1rem;color:var(--white);background:transparent;border:0;border-bottom:1px solid var(--gold);padding:.7rem 0;border-radius:0;width:100%}
+.field select option{background:var(--black)}
+.field input::placeholder{color:rgba(255,255,255,.45)}
+.form-note{font-size:.9rem;color:var(--muted)}
+.mail-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1.5rem}
+.mail{font-family:var(--font-quote);font-size:clamp(1.1rem,1.8vw,1.4rem);word-break:break-all;user-select:all;text-decoration:none}
+.copy-btn{font:inherit;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--gold);border:0;box-shadow:inset 0 0 0 1px var(--gold);border-radius:999px;padding:.45rem 1rem;cursor:pointer;min-height:36px}
+.thanks{border:1.5px solid var(--gold);border-radius:22px;padding:1.5rem}
+
+/* footer */
+.foot .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;padding-block:2rem calc(2rem + env(safe-area-inset-bottom,0px));font-size:.88rem;color:var(--muted)}
+.foot .left{display:flex;gap:1rem;align-items:center}
+.foot img{width:40px;height:auto}
+
+@media (max-width:860px){
+  .intro,.story,.register{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plans{grid-template-columns:minmax(0,1fr)}
+  .launch .wrap{grid-template-columns:minmax(0,1fr) auto}
+  .launch .launch-copy{grid-column:1 / -1;grid-row:2}
+}
+@media (max-width:760px){
+  .banner{flex-direction:column;align-items:stretch;min-height:0}
+  .banner .photo{position:relative;width:100%;height:68vw;min-height:280px}
+  .banner .fade{inset:0 0 auto 0;width:100%!important;height:68vw;min-height:280px;background:linear-gradient(0deg,#000 0%,rgba(0,0,0,.6) 22%,transparent 50%)!important}
+  .banner .content{padding-block:0 3.5rem;margin-top:-2rem}
+  .banner .inner{max-width:none}
+  .site-head{position:absolute}
+  .menu .hide-sm{display:none}
+}
+@media (max-width:600px){
+  .btn{white-space:normal;text-align:center}
+  .actions .btn{width:100%}
+  .site-head .brand span{display:none}
+}
+@media (max-width:420px){.facts{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.gallery{columns:2;column-gap:8px}.g-item{margin-bottom:8px}}
+
+/* landing additions */
+.intro-lean{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,6rem);align-items:end}
+.intro-lean > *{min-width:0}
+.contact-band{text-align:center}
+.contact-band .wrap{display:grid;justify-items:center;gap:1.25rem}
+.contact-band .h2{max-width:18ch}
+.contact-band .mail{color:var(--muted)}
+@media (max-width:860px){.intro-lean{grid-template-columns:minmax(0,1fr)}}
+
+/* landing v6 */
+.countdown{border-block:1px solid var(--gold)}
+.countdown .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2.5rem;padding-block:1.6rem}
+.cd-date{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1}
+.cd-date small{display:block;font-size:.42em;letter-spacing:.24em;color:var(--gold);margin-bottom:.45rem}
+.cd{display:flex;gap:clamp(1rem,3vw,2.25rem)}
+.cd div{display:grid;justify-items:center;gap:.3rem;min-width:3.5rem}
+.cd b{font-family:var(--font-display);font-weight:600;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.cd span{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--muted)}
+.what{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.what > *{min-width:0}
+.uses-list{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--gold)}
+.uses-list li{display:flex;gap:.75rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(186,159,104,.35);font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.1rem,1.6vw,1.35rem)}
+.uses-list li:nth-child(odd){padding-right:1rem}
+.uses-list svg{width:12px;height:12px;color:var(--gold);flex:none}
+.how-lead{max-width:52ch;margin-top:1.2rem}
+.closing{text-align:center}
+.closing .wrap{display:grid;justify-items:center;gap:1.4rem}
+.closing .h2{max-width:18ch}
+.foot .wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.35rem}
+.foot img{margin-bottom:.6rem}
+@media (max-width:860px){.what{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.uses-list{grid-template-columns:minmax(0,1fr)}.uses-list li:nth-child(odd){padding-right:0}}
+@media (max-width:860px){.booking-tiers{grid-template-columns:minmax(0,1fr)!important}}
+
+
+  /* ── Section shell ── */
+  .brands {
+    background: #000;
+    padding: 72px 64px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Thin gold rule across the top */
+  .brands::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    opacity: 0.35;
+  }
+
+  /* ── Parent brand ── */
+  .brands__parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--gold);
+    transition: opacity 0.35s ease;
+  }
+  .brands__parent:hover { opacity: 0.7; }
+
+  .brands__parent-logo {
+    display: block;
+    height: 60px;
+    width: auto;
+    color: var(--gold);
+  }
+
+  .brands__parent-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: rgba(186,159,104,0.5);
+  }
+
+  /* Thin centre rule between parent and brands */
+  .brands__divider {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(180deg, rgba(186,159,104,0.18), rgba(186,159,104,0.5), rgba(186,159,104,0.18));
+  }
+
+  /* ── Brand row ── */
+  .brands__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
+  /* ── Individual brand ── */
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--gold);
+    text-decoration: none;
+    padding: 20px 44px 24px;
+    position: relative;
+  }
+
+  /* Underline reveal on hover */
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+  }
+  .brand:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .brand__icon {
+    display: block;
+    height: 48px;
+    width: auto;
+    color: var(--gold);
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.35s ease;
+    opacity: 0.75;
+  }
+  .brand:hover .brand__icon {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+
+  .brand__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgba(186,159,104,0.5);
+    transition: color 0.35s ease;
+  }
+  .brand:hover .brand__name {
+    color: var(--gold);
+  }
+
+  /* Vertical separator between brands */
+  .brands__sep {
+    width: 1px;
+    height: 52px;
+    background: linear-gradient(180deg, transparent, rgba(186,159,104,0.18) 50%, transparent);
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 720px) {
+    .brands {
+      padding: 56px 32px 64px;
+      gap: 44px;
+    }
+    .brands__row {
+      flex-wrap: wrap;
+      gap: 8px 0;
+      max-width: 400px;
+    }
+    .brands__sep {
+      display: none;
+    }
+    .brand {
+      padding: 16px 28px 20px;
+      flex: 0 0 50%;
+    }
+    .brand::after { bottom: 8px; }
+  }
+
+  @media (max-width: 420px) {
+    .brand { padding: 16px 20px 20px; }
+    .brand__icon { height: 40px; }
+  }
+.site-head .brand span{display:none}
+
+  /* ── Brand tiles ── */
+  .brand-tiles{background:#000;padding:72px 32px 80px}
+  .brand-tiles__wrap{max-width:1240px;margin:0 auto}
+  .brand-tiles__header{display:flex;align-items:center;gap:20px;margin-bottom:56px}
+  .brand-tiles__rule{flex:1;height:1px;background:rgba(186,159,104,0.35)}
+  .brand-tiles__rule--purple{background:rgba(186,159,104,0.25)}
+  .brand-tiles__label{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.18em;color:#ba9f68;white-space:nowrap;text-transform:uppercase}
+  .brand-tiles__label--purple{color:rgba(186,159,104,0.8)}
+  .brand-tiles__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .brand-tile{text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .brand-tile__card{width:100%;aspect-ratio:3/4;border:1.5px solid rgba(186,159,104,0.5);border-radius:22px;display:flex;flex-direction:column;align-items:stretch;overflow:hidden;background:#000;transition:border-color .2s}
+  .brand-tile:hover .brand-tile__card{border-color:#ba9f68}
+  .brand-tile__icon{flex:1;display:flex;align-items:center;justify-content:center;padding:28px;color:rgba(255,255,255,.85)}
+  .brand-tile__icon svg{max-height:80px;max-width:80%;width:auto;height:auto}
+  .brand-tile__name{padding:11px 12px;background:#ba9f68;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.08em;color:#000;text-align:center;text-transform:uppercase}
+  .brand-tile__name sup{font-size:.65em;vertical-align:super}
+  .brand-tile__tagline{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:.78rem;letter-spacing:.14em;color:rgba(255,255,255,.45);text-align:center;text-transform:uppercase;margin:0}
+  /* ── Acknowledgement ── */
+  .dz-ack{background:#35173f;padding:72px 32px 80px}
+  .dz-ack__text{text-align:center}
+  .dz-ack__text p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.6rem;line-height:1.5;color:rgba(255,255,255,.88);margin:.1em 0}
+  @media(max-width:860px){
+    .brand-tiles__grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  }
+  @media(max-width:500px){
+    .brand-tiles{padding:56px 20px 64px}
+    .brand-tile__icon svg{max-height:60px}
+    .dz-ack__text p{font-size:1.25rem}
+  }
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C12.55 6.6 15.4 11.45 24 12C15.4 12.55 12.55 17.4 12 24C11.45 17.4 8.6 12.55 0 12C8.6 11.45 11.45 6.6 12 0Z"/></symbol>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <span class="brand" aria-label="Dancing Zen">
+      <img src="images/dz-mark.png" alt="Dancing Zen monogram" width="58" height="44">
+      <span>Dancing Zen</span>
+    </span>
+
+  </div>
+</header>
+
+<main id="top">
+  <section class="banner right" aria-labelledby="hero-title">
+    <img class="photo" src="images/dz-hero-zen-wall.jpg" alt="Gold sculpture against the purple ZEN wall in the garden at Dancing Zen, Adelaide, at dusk">
+    <div class="fade"></div>
+    <div class="content">
+      <div class="inner">
+        <p class="eyebrow">Opening 5 January 2027</p>
+        <h1 class="hero-h" id="hero-title">A little luxury, <span class="gold">shared generously</span></h1>
+        <p class="subline-p">A gathering space for small groups on Adelaide's western beaches.</p>
+        <div class="actions">
+          <a class="btn btn-gold btn-lg" href="/contact" data-link="contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="countdown" aria-label="Countdown to opening">
+    <div class="wrap">
+      <p class="cd-date"><small>Doors open</small>Tuesday 5 January</p>
+      <div class="cd" id="cd" aria-live="off">
+        <div><b id="cd-d">--</b><span>Days</span></div>
+        <div><b id="cd-h">--</b><span>Hours</span></div>
+        <div><b id="cd-m">--</b><span>Minutes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Three ways to use the space</p>
+      <h2 class="h2" id="how-title">Choose how <span class="gold">you show up</span></h2>
+      <div class="booking-tiers" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:3rem">
+        <div class="card">
+          <p class="eyebrow">Shared Care</p>
+          <h3 class="h3" style="font-size:clamp(1.3rem,2vw,1.6rem)">Give three hours,<br>get six</h3>
+          <p>Give three hours of your time — tend the garden, help with maintenance or offer your craft. The space is yours for six hours in return.</p>
+          <p>Bring your own furnishings or rent ours.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">DIY</p>
+          <h3 class="h3" style="font-size:clamp(1.3rem,2vw,1.6rem)">Set up and pack down yourself</h3>
+          <p>Hire the space and do it your way. Set up your own furnishings or rent ours, and pack everything down when you leave.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Full Event Service</p>
+          <h3 class="h3" style="font-size:clamp(1.3rem,2vw,1.6rem)">We'll do it all for you</h3>
+          <p>From setup to pack-down, we take care of everything. Arrive, hold your gathering, and leave — we handle the rest.</p>
+        </div>
+      </div>
+      <p style="margin-top:2rem;font-size:.9rem;color:rgba(255,255,255,.55)">A cleaning fee applies to all bookings. All hirers must hold their own public liability insurance.</p>
+    </div>
+  </section>
+
+  <section class="section ack" aria-labelledby="ack-title">
+    <div class="wrap">
+      <p class="eyebrow" id="ack-title">Acknowledgement of Country</p>
+      <blockquote>We are on Kaurna Yerta, the traditional lands of the Kaurna people.</blockquote>
+      <p>I bow to Elders past, present and emerging. May my tending honour their tending.</p>
+    </div>
+  </section>
+
+  <section class="section closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <p class="eyebrow">Opening 5 January 2027</p>
+      <h2 class="h2" id="closing-title">Want to hold something <span class="gold">here?</span></h2>
+      <a class="btn btn-gold btn-lg" href="/contact" data-link="contact">Get in touch</a>
+    </div>
+  </section>
+</main>
+
+<section class="brand-tiles" aria-label="Melano International Group brands">
+  <div class="brand-tiles__wrap">
+    <div class="brand-tiles__header">
+      <span class="brand-tiles__rule"></span>
+      <span class="brand-tiles__label">Melano International Group</span>
+      <span class="brand-tiles__rule"></span>
+    </div>
+    <div class="brand-tiles__grid">
+      <a href="https://mirrorballing.ai" class="brand-tile" target="_blank" rel="noopener">
+        <div class="brand-tile__card">
+          <div class="brand-tile__icon"><svg class="brand__icon" viewBox="0 0 126 111" xmlns="http://www.w3.org/2000/svg" aria-label="Mirrorballing">
+        <path fill="none" stroke-width="6.75" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="4" d="M 75 555 L 1185 555" transform="matrix(0.1, 0, 0, -0.1, 0, 111)"/>
+        <path fill="none" stroke-width="19.5" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="10" d="M 270 555 L 270 1035 L 630 555 L 990 1035 L 990 555" transform="matrix(0.1, 0, 0, -0.1, 0, 111)"/>
+        <path fill="none" stroke-width="10.725" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="10" d="M 270 555 L 270 75 L 630 555 L 990 75 L 990 555" transform="matrix(0.1, 0, 0, -0.1, 0, 111)"/>
+        <path fill-rule="nonzero" fill="currentColor" d="M 66.300781 55.5 C 66.300781 59.898438 59.699219 59.898438 59.699219 55.5 C 59.699219 51.101562 66.300781 51.101562 66.300781 55.5 Z"/>
+      </svg></div>
+          <div class="brand-tile__name">MIRRORBALLING<sup>&trade;</sup></div>
+        </div>
+        <p class="brand-tile__tagline">Thought Leadership &amp; Technology</p>
+      </a>
+      <a href="https://dancing.zen" class="brand-tile" target="_blank" rel="noopener">
+        <div class="brand-tile__card">
+          <div class="brand-tile__icon"><svg class="brand__icon" viewBox="0 0 177 135" xmlns="http://www.w3.org/2000/svg" aria-label="Dancing Zen">
+        <path fill="none" stroke-width="73.5" stroke-linecap="round" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="10" d="M 1121.25 441.015625 L 1121.25 1301.25 L 652.5 1301.25 C 459.570312 1301.445312 278.320312 1228.007812 165.351562 1103.867188 C 52.421875 979.726562 21.523438 820.078125 82.382812 674.765625 C 143.242188 529.453125 288.398438 416.25 472.5 370.507812" transform="matrix(0.1, 0, 0, -0.1, 0, 135)"/>
+        <path fill="none" stroke-width="73.5" stroke-linecap="round" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="10" d="M 648.75 908.984375 L 648.75 48.75 L 1117.5 48.75 C 1310.429688 48.554688 1491.679688 121.992188 1604.648438 246.132812 C 1717.578125 370.273438 1748.476562 529.921875 1687.617188 675.234375 C 1626.757812 820.546875 1481.601562 933.75 1297.5 979.492188" transform="matrix(0.1, 0, 0, -0.1, 0, 135)"/>
+        <path fill="none" stroke-width="73.5" stroke-linecap="round" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="10" d="M 648.75 908.984375 L 1121.25 441.015625 M 1121.25 908.984375 L 648.75 441.015625" transform="matrix(0.1, 0, 0, -0.1, 0, 135)"/>
+        <path fill-rule="nonzero" fill="currentColor" d="M 77.773438 63 L 78.824219 66.449219 L 82.273438 67.5 L 78.824219 68.550781 L 77.773438 72 L 76.726562 68.550781 L 73.273438 67.5 L 76.726562 66.449219 Z"/>
+        <path fill-rule="nonzero" fill="currentColor" d="M 99.226562 63 L 100.273438 66.449219 L 103.726562 67.5 L 100.273438 68.550781 L 99.226562 72 L 98.175781 68.550781 L 94.726562 67.5 L 98.175781 66.449219 Z"/>
+      </svg></div>
+          <div class="brand-tile__name">DANCING ZEN<sup>&trade;</sup></div>
+        </div>
+        <p class="brand-tile__tagline">Shared Care Intimate Event Space</p>
+      </a>
+      <a href="https://constellating.life" class="brand-tile" target="_blank" rel="noopener">
+        <div class="brand-tile__card">
+          <div class="brand-tile__icon"><svg class="brand__icon" viewBox="0 0 199.5 193.5" xmlns="http://www.w3.org/2000/svg" aria-label="Constellating Life">
+        <defs>
+          <clipPath id="cl-clip-0"><path clip-rule="nonzero" d="M 0.0078125 0 L 198.992188 0 L 198.992188 193 L 0.0078125 193 Z"/></clipPath>
+          <clipPath id="cl-clip-1"><path clip-rule="nonzero" d="M 0.0078125 4 L 191 4 L 191 193 L 0.0078125 193 Z"/></clipPath>
+          <clipPath id="cl-clip-2"><path clip-rule="nonzero" d="M 18 21 L 192 21 L 192 193 L 18 193 Z"/></clipPath>
+        </defs>
+        <g clip-path="url(#cl-clip-0)">
+          <path fill="none" stroke-width="31.5" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="4" d="M 1893.004683 959.98708 C 1893.004683 441.424015 1472.585191 21.004522 953.982962 21.004522 C 435.380733 21.004522 15.000404 441.424015 15.000404 959.98708 C 15.000404 1478.589309 435.380733 1898.969638 953.982962 1898.969638 C 1472.585191 1898.969638 1893.004683 1478.589309 1893.004683 959.98708 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        </g>
+        <g clip-path="url(#cl-clip-1)">
+          <path fill="none" stroke-width="31.5" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="4" d="M 1733.257025 875.237403 C 1733.257025 412.129764 1357.836321 36.748224 894.767846 36.748224 C 431.660207 36.748224 56.239503 412.129764 56.239503 875.237403 C 56.239503 1338.345042 431.660207 1713.765746 894.767846 1713.765746 C 1357.836321 1713.765746 1733.257025 1338.345042 1733.257025 875.237403 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        </g>
+        <g clip-path="url(#cl-clip-2)">
+          <path fill="none" stroke-width="31.5" stroke-linecap="butt" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="4" d="M 1736.977552 852.718427 C 1736.977552 474.556282 1430.445333 168.024063 1052.283188 168.024063 C 674.042716 168.024063 367.510497 474.556282 367.510497 852.718427 C 367.510497 1230.958899 674.042716 1537.491118 1052.283188 1537.491118 C 1430.445333 1537.491118 1736.977552 1230.958899 1736.977552 852.718427 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        </g>
+        <path fill="none" stroke-width="24" stroke-linecap="round" stroke-linejoin="miter" stroke="currentColor" stroke-miterlimit="4" d="M 1046.252019 1537.491118 L 1046.252019 743.256621" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        <path fill-rule="nonzero" fill="currentColor" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-miterlimit="4" d="M 1130.218427 1698.76615 C 1130.218427 1652.788275 1092.973999 1615.504683 1046.996124 1615.504683 C 1001.018249 1615.504683 963.734658 1652.788275 963.734658 1698.76615 C 963.734658 1744.744025 1001.018249 1781.988453 1046.996124 1781.988453 C 1092.973999 1781.988453 1130.218427 1744.744025 1130.218427 1698.76615 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        <path fill-rule="nonzero" fill="currentColor" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-miterlimit="4" d="M 433.500888 858.005491 C 433.500888 824.442426 406.2823 797.263001 372.719234 797.263001 C 339.195333 797.263001 311.976744 824.442426 311.976744 858.005491 C 311.976744 891.568556 339.195333 918.747981 372.719234 918.747981 C 406.2823 918.747981 433.500888 891.568556 433.500888 858.005491 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        <path fill-rule="nonzero" fill="currentColor" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-miterlimit="4" d="M 1975.522045 858.005491 C 1975.522045 812.027616 1938.238453 774.783188 1892.260578 774.783188 C 1846.282703 774.783188 1808.999112 812.027616 1808.999112 858.005491 C 1808.999112 903.983366 1846.282703 941.266957 1892.260578 941.266957 C 1938.238453 941.266957 1975.522045 903.983366 1975.522045 858.005491 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+        <path fill-rule="nonzero" fill="currentColor" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-miterlimit="4" d="M 1026.748627 738.008721 L 1026.748627 446.985223 L 897.000161 592.516554 Z M 1065.75541 738.008721 L 1065.75541 446.985223 L 1195.503876 592.516554 Z" transform="matrix(0.0997423, 0, 0, -0.0997423, 0.00773196, 193.001289)"/>
+      </svg></div>
+          <div class="brand-tile__name">CONSTELLATING LIFE<sup>&trade;</sup></div>
+        </div>
+        <p class="brand-tile__tagline">Directory</p>
+      </a>
+      <a href="https://nava.vision" class="brand-tile" target="_blank" rel="noopener">
+        <div class="brand-tile__card">
+          <div class="brand-tile__icon"><svg class="brand__icon" viewBox="0 0 807.75 780.75" xmlns="http://www.w3.org/2000/svg" aria-label="NAVA Vision">
+        <path fill="none" stroke-width="213.814" stroke-linecap="butt" stroke-linejoin="round" stroke="currentColor" stroke-miterlimit="4" d="M 264.260126 7545.306696 L 4038.7496 3903.7504 L 264.260126 262.194104 Z M 7813.239073 7545.306696 L 4038.7496 3903.7504 L 7813.239073 262.194104 Z M 7813.239073 7545.306696" transform="matrix(0.099968, 0, 0, -0.099968, 0.00432138, 780.50008)"/>
+      </svg></div>
+          <div class="brand-tile__name">NAVA VISION<sup>&trade;</sup></div>
+        </div>
+        <p class="brand-tile__tagline">Events &amp; Experiences</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="d1" style="margin-inline:auto;max-width:1240px"></div>
+<section class="dz-ack" aria-label="Acknowledgement of Country">
+  <div class="brand-tiles__wrap">
+    <div class="brand-tiles__header">
+      <span class="brand-tiles__rule brand-tiles__rule--purple"></span>
+      <span class="brand-tiles__label brand-tiles__label--purple">Acknowledgement of Country</span>
+      <span class="brand-tiles__rule brand-tiles__rule--purple"></span>
+    </div>
+    <div class="dz-ack__text">
+      <p>We do this work on ancient land.</p>
+      <p>We pay deep respect to the original people.</p>
+      <p>May this work honour their tending.</p>
+    </div>
+  </div>
+</section>
+<footer class="foot">
+  <div class="wrap">
+    <span style="color:rgba(255,255,255,.35);font-size:.8rem">Dancing Zen™ All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+/* The only outbound link on this page: the nava.vision contact page. */
+const CONTACT_URL = "/contact";
+document.querySelectorAll('[data-link="contact"]').forEach(a=>a.href=CONTACT_URL);
+
+/* Countdown to Friday 4 December 2026, 00:00 Adelaide (UTC+10:30) */
+(function(){
+  const launch=Date.UTC(2027,0,4,13,30);
+  const d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m');
+  function tick(){
+    let ms=launch-Date.now();
+    if(ms<=0){document.getElementById('cd').innerHTML='<div><b>Now</b><span>Open</span></div>';return}
+    const days=Math.floor(ms/864e5);ms-=days*864e5;const hrs=Math.floor(ms/36e5);ms-=hrs*36e5;const mins=Math.floor(ms/6e4);
+    d.textContent=days;h.textContent=String(hrs).padStart(2,'0');m.textContent=String(mins).padStart(2,'0');
+  }
+  tick();setInterval(tick,30000);
+})();
+</script>
+
+</body></html>
